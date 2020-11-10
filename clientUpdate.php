@@ -11,12 +11,12 @@ exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 if(count($_POST)>0)
 {
 mysqli_query($link,"UPDATE tblclient set Client_name='" . $_POST['txtClient_name'] . "', Address='" .
-$_POST['txtAdd'] . "', Age='" . $_POST['txtAge'] . "', Gender=" . $_POST['txtGender'] . "
-,ContactNo='" . $_POST['txtCNo'] . "', CStatus='" . $_POST['txtCS'] . "' WHERE CLID=" .
-$_POST['txtCLID'] . "");
+$_POST['txtAdd'] . "', Age='" . $_POST['txtAge'] . "', Gender='" . $_POST['txtGender'] . "'
+,ContactNo='" . $_POST['txtCNo'] . "', CStatus='" . $_POST['txtCS'] . "' WHERE CLID='" .
+$_POST['txtCLID'] . "'");
 $message = "Record Modified Successfully";
 }
-$result = mysqli_query($link,"SELECT * FROM tblclient WHERE CLID=" . $_GET['CLID'] . "");
+$result = mysqli_query($link,"SELECT * FROM tblclient WHERE CLID='" . $_GET['CLID'] . "'");
 $row= mysqli_fetch_array($result);
 ?><html>
 <head>
